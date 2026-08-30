@@ -310,6 +310,12 @@
       border: 1px solid rgba(120, 170, 255, 0.1);
       display: inline-block;
       margin-bottom: 1rem;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .glass-panel .badge:hover {
+      background: rgba(90, 150, 255, 0.2);
     }
 
     .glass-panel .value-large {
@@ -320,6 +326,7 @@
       background-clip: text;
       color: transparent;
       margin: 0.3rem 0 1rem;
+      cursor: pointer;
     }
 
     .glass-panel .stat {
@@ -485,6 +492,56 @@
       border: 1px solid rgba(90, 150, 255, 0.08);
     }
 
+    /* Testimonials / Trust section */
+    .trust-section {
+      margin: 2.5rem 0;
+      padding: 2rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.03);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    }
+
+    .trust-section .trust-title {
+      color: #8295b9;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      opacity: 0.6;
+    }
+
+    .trust-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .trust-logos .trust-item {
+      color: #6a7fa0;
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      opacity: 0.6;
+      transition: 0.3s;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .trust-logos .trust-item:hover {
+      opacity: 1;
+      color: #bdd2ff;
+      transform: scale(1.05);
+    }
+
+    .trust-logos .trust-item i {
+      font-size: 1.6rem;
+      color: #7aa2ff;
+    }
+
     /* Footer */
     .footer-meta {
       display: flex;
@@ -509,6 +566,7 @@
       text-decoration: none;
       transition: 0.2s;
       font-size: 0.9rem;
+      cursor: pointer;
     }
 
     .footer-links a:hover {
@@ -526,6 +584,7 @@
       text-decoration: none;
       font-size: 1.2rem;
       filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+      cursor: pointer;
     }
 
     .social-icons a:hover {
@@ -737,6 +796,9 @@
         flex-wrap: wrap;
         gap: 1rem;
       }
+      .trust-logos {
+        gap: 1.5rem;
+      }
     }
 
     @media (max-width: 550px) {
@@ -797,7 +859,8 @@
         <div class="hero-sub">
           We drive business growth through strategic brand promotion, 
           data-driven social media advertising, and cutting-edge digital solutions 
-          that turn visitors into loyal customers.
+          that turn visitors into loyal customers. With 150+ successful campaigns 
+          and $12M+ in client revenue, we're the partner you need to dominate your market.
         </div>
         <div class="hero-stats">
           <div class="stat-item">
@@ -817,7 +880,7 @@
           <a href="#" class="btn-primary" onclick="navigateTo('services')">
             <i class="fas fa-compass"></i> Explore Services
           </a>
-          <a href="#" class="btn-outline" onclick="navigateTo('portfolio')">
+          <a href="#" class="btn-outline" onclick="navigateTo('work')">
             <i class="fas fa-play-circle"></i> View Portfolio
           </a>
         </div>
@@ -826,8 +889,10 @@
       <!-- Right panel -->
       <div class="hero-visual">
         <div class="glass-panel">
-          <div class="badge"><i class="fas fa-chart-line" style="margin-right: 6px;"></i> live performance</div>
-          <div class="value-large">+127%</div>
+          <div class="badge" onclick="navigateTo('analytics')">
+            <i class="fas fa-chart-line" style="margin-right: 6px;"></i> live performance
+          </div>
+          <div class="value-large" onclick="navigateTo('analytics')">+127%</div>
           <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: #a3b9dd; margin-bottom: 0.6rem;">
             <span>engagement growth</span>
             <span>↑ 8.4%</span>
@@ -858,6 +923,18 @@
       </div>
     </div>
 
+    <!-- Trust / Brand Logos -->
+    <div class="trust-section">
+      <div class="trust-title">Trusted by leading brands</div>
+      <div class="trust-logos">
+        <div class="trust-item" onclick="navigateTo('work')"><i class="fas fa-building"></i> TechCorp</div>
+        <div class="trust-item" onclick="navigateTo('work')"><i class="fas fa-store"></i> ShopWave</div>
+        <div class="trust-item" onclick="navigateTo('work')"><i class="fas fa-rocket"></i> LaunchPad</div>
+        <div class="trust-item" onclick="navigateTo('work')"><i class="fas fa-crown"></i> LuxeBrand</div>
+        <div class="trust-item" onclick="navigateTo('work')"><i class="fas fa-leaf"></i> GreenFuture</div>
+      </div>
+    </div>
+
     <!-- Services -->
     <div class="services-section">
       <div class="section-title">
@@ -867,37 +944,37 @@
         <a href="#" class="service-card" onclick="navigateTo('growth')">
           <span class="icon-wrap"><i class="fas fa-chart-simple"></i></span>
           <h4>Business Growth</h4>
-          <p>Strategic planning, market analysis, and scalable solutions that drive sustainable revenue growth for your business.</p>
+          <p>Strategic planning, market analysis, and scalable solutions that drive sustainable revenue growth for your business. We identify opportunities and execute with precision.</p>
           <span class="service-tag"><i class="fas fa-arrow-right"></i> Learn more</span>
         </a>
         <a href="#" class="service-card" onclick="navigateTo('branding')">
           <span class="icon-wrap"><i class="fas fa-bullhorn"></i></span>
           <h4>Brand Promotion</h4>
-          <p>Build a powerful brand identity with targeted campaigns, influencer partnerships, and compelling storytelling.</p>
+          <p>Build a powerful brand identity with targeted campaigns, influencer partnerships, compelling storytelling, and multi-channel presence that resonates with your audience.</p>
           <span class="service-tag"><i class="fas fa-arrow-right"></i> Learn more</span>
         </a>
         <a href="#" class="service-card" onclick="navigateTo('social')">
           <span class="icon-wrap"><i class="fas fa-hashtag"></i></span>
           <h4>Social Media Advertising</h4>
-          <p>Data-driven ad campaigns across Instagram, LinkedIn, TikTok, and Facebook with AI-optimized targeting.</p>
+          <p>Data-driven ad campaigns across Instagram, LinkedIn, TikTok, and Facebook with AI-optimized targeting. We maximize ROI through continuous testing and optimization.</p>
           <span class="service-tag"><i class="fas fa-arrow-right"></i> Learn more</span>
         </a>
         <a href="#" class="service-card" onclick="navigateTo('seo')">
           <span class="icon-wrap"><i class="fas fa-magnifying-glass"></i></span>
           <h4>SEO & Content Marketing</h4>
-          <p>Rank higher on search engines with keyword strategy, quality content, and technical SEO optimization.</p>
+          <p>Rank higher on search engines with keyword strategy, quality content, technical SEO optimization, and link building that drives organic traffic and conversions.</p>
           <span class="service-tag"><i class="fas fa-arrow-right"></i> Learn more</span>
         </a>
         <a href="#" class="service-card" onclick="navigateTo('analytics')">
           <span class="icon-wrap"><i class="fas fa-database"></i></span>
           <h4>Analytics & Insights</h4>
-          <p>Real-time dashboards, customer journey mapping, and predictive analytics to make smarter decisions.</p>
+          <p>Real-time dashboards, customer journey mapping, predictive analytics, and actionable insights to make smarter business decisions and optimize performance.</p>
           <span class="service-tag"><i class="fas fa-arrow-right"></i> Learn more</span>
         </a>
         <a href="#" class="service-card" onclick="navigateTo('creative')">
           <span class="icon-wrap"><i class="fas fa-pen-fancy"></i></span>
           <h4>Creative Studio</h4>
-          <p>High-impact visuals, video production, and motion graphics that capture attention and drive engagement.</p>
+          <p>High-impact visuals, video production, motion graphics, and brand design that capture attention, tell your story, and drive engagement across all platforms.</p>
           <span class="service-tag"><i class="fas fa-arrow-right"></i> Learn more</span>
         </a>
       </div>
@@ -918,6 +995,7 @@
         <a href="#" onclick="navigateTo('privacy')">Privacy</a>
         <a href="#" onclick="navigateTo('terms')">Terms</a>
         <a href="#" onclick="navigateTo('careers')">Careers</a>
+        <a href="#" onclick="navigateTo('contact')">Support</a>
       </div>
       <div class="social-icons">
         <a href="#" onclick="navigateTo('social/linkedin')"><i class="fab fa-linkedin-in"></i></a>
@@ -945,42 +1023,53 @@
   </div>
 
   <script>
-    // Navigation handler - goes to different sections/pages
+    // Navigation handler - goes to different sections/pages with detailed messages
     function navigateTo(destination) {
       const messages = {
-        'home': '🏠 Welcome to NexoVista Digital Agency',
-        'services': '🚀 Explore our full range of digital services',
-        'work': '🎯 View our portfolio and case studies',
-        'about': '👋 Learn about our team and mission',
-        'contact': '📩 Let\'s start your growth journey — contact us today!',
-        'growth': '📈 Business Growth — Strategy, execution, and scaling',
-        'branding': '🎨 Brand Promotion — Build a memorable brand',
-        'social': '📱 Social Media Advertising — AI-powered campaigns',
-        'seo': '🔍 SEO & Content — Rank higher, attract more',
-        'analytics': '📊 Analytics & Insights — Data-driven decisions',
-        'creative': '🎬 Creative Studio — Visual storytelling',
-        'portfolio': '🖼️ View our featured projects and success stories',
-        'privacy': '🔒 Privacy Policy — We protect your data',
-        'terms': '📋 Terms of Service — Our commitment to you',
-        'careers': '💼 Join our team — We\'re hiring!',
-        'social/linkedin': '💼 Connect with us on LinkedIn',
-        'social/instagram': '📸 Follow us on Instagram',
-        'social/twitter': '🐦 Follow us on X',
-        'social/youtube': '📺 Subscribe to our YouTube channel',
-        'social/tiktok': '🎵 Follow us on TikTok'
+        'home': '🏠 Welcome to NexoVista Digital Agency — we help businesses grow online',
+        'services': '🚀 Explore our full range of digital services: Growth, Branding, Social Ads, SEO, Analytics & Creative',
+        'work': '🎯 View our portfolio — 150+ successful campaigns, $12M+ in client revenue',
+        'about': '👋 Learn about our team — 20+ digital experts, 5 years of excellence',
+        'contact': '📩 Let\'s start your growth journey — contact us today for a free consultation!',
+        'growth': '📈 Business Growth — Strategic planning, market analysis, and scalable solutions for sustainable revenue',
+        'branding': '🎨 Brand Promotion — Build a powerful brand identity with targeted campaigns and storytelling',
+        'social': '📱 Social Media Advertising — AI-powered campaigns across Instagram, LinkedIn, TikTok & Facebook',
+        'seo': '🔍 SEO & Content — Rank higher, attract more organic traffic with proven strategies',
+        'analytics': '📊 Analytics & Insights — Real-time dashboards, predictive analytics, and actionable insights',
+        'creative': '🎬 Creative Studio — High-impact visuals, video production, motion graphics & brand design',
+        'portfolio': '🖼️ Featured projects — See how we transformed businesses across 15+ industries',
+        'privacy': '🔒 Privacy Policy — We protect your data with enterprise-grade security',
+        'terms': '📋 Terms of Service — Our commitment to transparency and excellence',
+        'careers': '💼 Join our team — We\'re hiring! Check our open positions',
+        'social/linkedin': '💼 Connect with us on LinkedIn — let\'s network!',
+        'social/instagram': '📸 Follow us on Instagram — daily creative inspiration',
+        'social/twitter': '🐦 Follow us on X — digital marketing insights daily',
+        'social/youtube': '📺 Subscribe to our YouTube channel — tutorials & case studies',
+        'social/tiktok': '🎵 Follow us on TikTok — short-form marketing tips'
       };
 
       const message = messages[destination] || `📍 Navigating to ${destination.replace('/', ' · ')}`;
       showToast(message);
       
-      // Simulate page navigation with a slight delay
       console.log(`Navigation: ${destination}`);
       
-      // If destination is a contact or get started, show special message
-      if (destination === 'contact' || destination === 'contact') {
+      // Additional actions for specific destinations
+      if (destination === 'contact') {
         setTimeout(() => {
-          showToast('📞 Schedule a free consultation — we\'ll reach out within 24 hours');
+          showToast('📞 Schedule a free 30-minute consultation — we\'ll reach out within 24 hours');
         }, 1200);
+      }
+      
+      if (destination === 'work' || destination === 'portfolio') {
+        setTimeout(() => {
+          showToast('🏆 Featured: E-commerce brand +340% sales, SaaS startup +280% leads');
+        }, 1400);
+      }
+      
+      if (destination === 'about') {
+        setTimeout(() => {
+          showToast('🌟 20+ experts, 5 years, 150+ happy clients — we\'re the team for you');
+        }, 1300);
       }
     }
 
@@ -997,7 +1086,7 @@
       
       window.toastTimeout = setTimeout(() => {
         toast.classList.remove('show');
-      }, 2800);
+      }, 3000);
     }
 
     // Newsletter handler
@@ -1035,22 +1124,8 @@
       stat.style.cursor = 'pointer';
     });
 
-    // Click on badge
-    document.querySelector('.glass-panel .badge')?.addEventListener('click', function() {
-      navigateTo('analytics');
-    });
-
-    // Click on value-large
-    document.querySelector('.glass-panel .value-large')?.addEventListener('click', function() {
-      navigateTo('analytics');
-    });
-
-    // Click on pill tag
-    document.querySelector('.pill-tag')?.addEventListener('click', function() {
-      navigateTo('home');
-    });
-
     console.log('🚀 NexoVista Digital Agency · All interactive elements working!');
+    console.log('💡 Click any button, link, or card to see detailed navigation messages.');
   </script>
 </body>
 </html>
